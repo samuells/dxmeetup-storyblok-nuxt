@@ -1,8 +1,9 @@
 <template>
   <section class="util__container">
-    <!-- <component v-if="story.content.component" :key="story.content._uid" :blok="story.content" :is="story.content.component"></component> -->
-    <!-- {{ story.content.stripes }} -->
+    <component :key="heroArea._uid" v-for="heroArea in story.content.heroArea" :heroArea="heroArea" :is="heroArea.component"></component>
     <component :key="stripe._uid" v-for="stripe in story.content.stripes" :stripe="stripe" :is="stripe.component"></component>
+    <stripe-speakers :speakerHeadline="story.content.speakers_headline" :speakers="story.content.speakers"></stripe-speakers>
+    <stripe-image-with-content :key="stripe._uid" v-for="stripe in story.content.video_spotlight" :stripe="stripe"></stripe-image-with-content>
   </section>
 </template>
 
